@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewPager() {
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
         viewPager.adapter = mSectionsPagerAdapter
+        viewPager.setPageTransformer(false, IntroPageTransformer())
     }
 
     private fun bindEvent() {

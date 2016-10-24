@@ -28,7 +28,10 @@ class PlaceholderFragment : Fragment() {
                 else -> throw IllegalArgumentException("Page is Invalid.")
             }
 
-        return inflater.inflate(layoutResId, container, false)
+        val view = inflater.inflate(layoutResId, container, false)
+        view.tag = mPage
+
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
