@@ -2,7 +2,7 @@ package com.trydroid.template
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.viewPager
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewPager() {
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
         viewPager.adapter = mSectionsPagerAdapter
-        viewPager.setPageTransformer(false, IntroPageTransformer())
+        viewPager.setPageTransformer(false, WalkThroughPageTransformer())
     }
 
     private fun bindEvent() {

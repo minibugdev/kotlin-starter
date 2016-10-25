@@ -3,7 +3,7 @@ package com.trydroid.template
 import android.support.v4.view.ViewPager
 import android.view.View
 
-class IntroPageTransformer : ViewPager.PageTransformer {
+class ParallaxPageTransformer : ViewPager.PageTransformer {
     override fun transformPage(page: View, position: Float) {
         // Get the page index from the tag. This makes
         // it possible to know which page index you're
