@@ -1,32 +1,18 @@
 package com.trydroid.template
 
-import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import android.support.v4.app.Fragment
+import kotlinx.android.synthetic.main.activity_layout.fab
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
-    private lateinit var mSectionsPagerAdapter: SectionsPagerAdapter
+    override fun getFragment(): Fragment = MainFragment()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        setSupportActionBar(toolbar)
-        setupViewPager()
-
-        bindEvent()
-    }
-
-    private fun setupViewPager() {
-        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
-        viewPager.adapter = mSectionsPagerAdapter
-    }
-
-    private fun bindEvent() {
+    override fun bindEvent() {
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null)
+                .show()
         }
     }
 }
